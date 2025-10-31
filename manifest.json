@@ -1,0 +1,14 @@
+{
+  "name": "Checklist Veicular MSG",
+  "short_name": "Checklist MSG",
+  "description": "Aplicativo PWA para checklist pré-viagem de veículos da empresa.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#2c3e50",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icons/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

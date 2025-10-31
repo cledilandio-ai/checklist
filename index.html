@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Checklist de Veículos MSG</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist Pré-Viagem</h1>
+
+        <div id="step-0" class="step active">
+            <h2>Identificação do Veículo</h2>
+            <form id="plate-form">
+                <label for="plate">Placa do Veículo:</label>
+                <input type="text" id="plate" name="plate" required placeholder="AAA-1234 ou AAA1B34">
+                <button type="button" id="start-btn">Iniciar Checklist</button>
+            </form>
+        </div>
+
+        <div id="step-1" class="step hidden">
+            <h2><span class="step-number">1/7:</span> Luzes Dianteiras</h2>
+            <form class="checklist-form">
+                <div class="item"> <label>Lanterna (Meia Luz) Esq.:</label> <div class="options"> <label><input type="radio" name="lanterna_esq" value="OK" required> OK</label> <label><input type="radio" name="lanterna_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Lanterna (Meia Luz) Dir.:</label> <div class="options"> <label><input type="radio" name="lanterna_dir" value="OK" required> OK</label> <label><input type="radio" name="lanterna_dir" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Farol Baixo Esq.:</label> <div class="options"> <label><input type="radio" name="farol_baixo_esq" value="OK" required> OK</label> <label><input type="radio" name="farol_baixo_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Farol Baixo Dir.:</label> <div class="options"> <label><input type="radio" name="farol_baixo_dir" value="OK" required> OK</label> <label><input type="radio" name="farol_baixo_dir" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Farol Alto Esq.:</label> <div class="options"> <label><input type="radio" name="farol_alto_esq" value="OK" required> OK</label> <label><input type="radio" name="farol_alto_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Farol Alto Dir.:</label> <div class="options"> <label><input type="radio" name="farol_alto_dir" value="OK" required> OK</label> <label><input type="radio" name="farol_alto_dir" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Pisca Esq. Dianteiro:</label> <div class="options"> <label><input type="radio" name="pisca_dianteiro_esq" value="OK" required> OK</label> <label><input type="radio" name="pisca_dianteiro_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Pisca Dir. Dianteiro:</label> <div class="options"> <label><input type="radio" name="pisca_dianteiro_dir" value="OK" required> OK</label> <label><input type="radio" name="pisca_dianteiro_dir" value="Defeito"> Defeito</label> </div> </div>
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" class="next-btn">Próximo</button>
+            </form>
+        </div>
+
+        <div id="step-2" class="step hidden">
+            <h2><span class="step-number">2/7:</span> Luzes Traseiras</h2>
+            <form class="checklist-form">
+                <div class="item"> <label>Lanterna Esq. Traseira:</label> <div class="options"> <label><input type="radio" name="lanterna_traseira_esq" value="OK" required> OK</label> <label><input type="radio" name="lanterna_traseira_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Lanterna Dir. Traseira:</label> <div class="options"> <label><input type="radio" name="lanterna_traseira_dir" value="OK" required> OK</label> <label><input type="radio" name="lanterna_traseira_dir" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Luz de Freio Esq.:</label> <div class="options"> <label><input type="radio" name="freio_esq" value="OK" required> OK</label> <label><input type="radio" name="freio_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Luz de Freio Dir.:</label> <div class="options"> <label><input type="radio" name="freio_dir" value="OK" required> OK</label> <label><input type="radio" name="freio_dir" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Luz de Ré:</label> <div class="options"> <label><input type="radio" name="luz_re" value="OK" required> OK</label> <label><input type="radio" name="luz_re" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Luz da Placa:</label> <div class="options"> <label><input type="radio" name="luz_placa" value="OK" required> OK</label> <label><input type="radio" name="luz_placa" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Pisca Esq. Traseiro:</label> <div class="options"> <label><input type="radio" name="pisca_traseiro_esq" value="OK" required> OK</label> <label><input type="radio" name="pisca_traseiro_esq" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Pisca Dir. Traseiro:</label> <div class="options"> <label><input type="radio" name="pisca_traseiro_dir" value="OK" required> OK</label> <label><input type="radio" name="pisca_traseiro_dir" value="Defeito"> Defeito</label> </div> </div>
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" class="next-btn">Próximo</button>
+            </form>
+        </div>
+        
+        <div id="step-3" class="step hidden">
+            <h2><span class="step-number">3/7:</span> Tipo de Veículo</h2>
+            <form id="truck-type-form" class="checklist-form">
+                <div class="item">
+                    <label>Tipo de Veículo:</label>
+                    <div class="options">
+                        <label><input type="radio" name="truck_type" value="toco" required> Toco (2 eixos)</label>
+                        <label><input type="radio" name="truck_type" value="trucado" required> Trucado (3 eixos)</label>
+                    </div>
+                </div>
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" id="start-tire-check-btn">Próximo (Pneus)</button>
+            </form>
+        </div>
+
+        <div id="step-3-toco" class="step hidden">
+             <h2><span class="step-number">4/7:</span> Pneus Toco (Profundidade mm)</h2>
+             <p class="instruction">Preencha as 3 medidas (Fora/Meio/Dentro) para cada pneu.</p>
+             <form class="tire-form checklist-form">
+                 <div class="tire-schematic toco">
+                     <div class="axle">
+                         <div class="tire-position" data-position="1E">1E (Diant. Esq.)<input type="number" name="pneu_1E_f" placeholder="F" required><input type="number" name="pneu_1E_m" placeholder="M" required><input type="number" name="pneu_1E_d" placeholder="D" required></div>
+                         <div class="tire-position" data-position="1D">1D (Diant. Dir.)<input type="number" name="pneu_1D_f" placeholder="F" required><input type="number" name="pneu_1D_m" placeholder="M" required><input type="number" name="pneu_1D_d" placeholder="D" required></div>
+                     </div>
+                     <div class="axle">
+                         <div class="tire-position dual" data-position="2EE">2EE (Tras. Esq. Ext.)<input type="number" name="pneu_2EE_f" placeholder="F" required><input type="number" name="pneu_2EE_m" placeholder="M" required><input type="number" name="pneu_2EE_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="2EI">2EI (Tras. Esq. Int.)<input type="number" name="pneu_2EI_f" placeholder="F" required><input type="number" name="pneu_2EI_m" placeholder="M" required><input type="number" name="pneu_2EI_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="2DI">2DI (Tras. Dir. Int.)<input type="number" name="pneu_2DI_f" placeholder="F" required><input type="number" name="pneu_2DI_m" placeholder="M" required><input type="number" name="pneu_2DI_d" placeholder="D" required></div>
+                         <div class="tire-position dual" data-position="2DE">2DE (Tras. Dir. Ext.)<input type="number" name="pneu_2DE_f" placeholder="F" required><input type="number" name="pneu_2DE_m" placeholder="M" required><input type="number" name="pneu_2DE_d" placeholder="D" required></div>
+                     </div>
+                     <div class="axle estepe">
+                         <div class="tire-position" data-position="ESTEPE">ESTEPE<input type="number" name="pneu_ESTEPE_f" placeholder="F" required><input type="number" name="pneu_ESTEPE_m" placeholder="M" required><input type="number" name="pneu_ESTEPE_d" placeholder="D" required></div>
+                     </div>
+                 </div>
+                 <button type="button" class="prev-btn" data-target="3">Voltar (Tipo)</button>
+                 <button type="button" class="next-btn">Próximo</button>
+             </form>
+        </div>
+
+        <div id="step-3-trucado" class="step hidden">
+             <h2><span class="step-number">4/7:</span> Pneus Trucado (Profundidade mm)</h2>
+             <p class="instruction">Preencha as 3 medidas (Fora/Meio/Dentro) para cada pneu.</p>
+             <form class="tire-form checklist-form">
+                 <div class="tire-schematic trucado">
+                     <div class="axle">
+                         <div class="tire-position" data-position="1E">1E (Diant. Esq.)<input type="number" name="pneu_1E_f" placeholder="F" required><input type="number" name="pneu_1E_m" placeholder="M" required><input type="number" name="pneu_1E_d" placeholder="D" required></div>
+                         <div class="tire-position" data-position="1D">1D (Diant. Dir.)<input type="number" name="pneu_1D_f" placeholder="F" required><input type="number" name="pneu_1D_m" placeholder="M" required><input type="number" name="pneu_1D_d" placeholder="D" required></div>
+                     </div>
+                     <div class="axle">
+                          <div class="tire-position dual" data-position="2EE">2EE (Tração Esq. Ext.)<input type="number" name="pneu_2EE_f" placeholder="F" required><input type="number" name="pneu_2EE_m" placeholder="M" required><input type="number" name="pneu_2EE_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="2EI">2EI (Tração Esq. Int.)<input type="number" name="pneu_2EI_f" placeholder="F" required><input type="number" name="pneu_2EI_m" placeholder="M" required><input type="number" name="pneu_2EI_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="2DI">2DI (Tração Dir. Int.)<input type="number" name="pneu_2DI_f" placeholder="F" required><input type="number" name="pneu_2DI_m" placeholder="M" required><input type="number" name="pneu_2DI_d" placeholder="D" required></div>
+                         <div class="tire-position dual" data-position="2DE">2DE (Tração Dir. Ext.)<input type="number" name="pneu_2DE_f" placeholder="F" required><input type="number" name="pneu_2DE_m" placeholder="M" required><input type="number" name="pneu_2DE_d" placeholder="D" required></div>
+                     </div>
+                     <div class="axle">
+                          <div class="tire-position dual" data-position="3EE">3EE (Truck Esq. Ext.)<input type="number" name="pneu_3EE_f" placeholder="F" required><input type="number" name="pneu_3EE_m" placeholder="M" required><input type="number" name="pneu_3EE_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="3EI">3EI (Truck Esq. Int.)<input type="number" name="pneu_3EI_f" placeholder="F" required><input type="number" name="pneu_3EI_m" placeholder="M" required><input type="number" name="pneu_3EI_d" placeholder="D" required></div>
+                         <div class="tire-position dual inner" data-position="3DI">3DI (Truck Dir. Int.)<input type="number" name="pneu_3DI_f" placeholder="F" required><input type="number" name="pneu_3DI_m" placeholder="M" required><input type="number" name="pneu_3DI_d" placeholder="D" required></div>
+                         <div class="tire-position dual" data-position="3DE">3DE (Truck Dir. Ext.)<input type="number" name="pneu_3DE_f" placeholder="F" required><input type="number" name="pneu_3DE_m" placeholder="M" required><input type="number" name="pneu_3DE_d" placeholder="D" required></div>
+                     </div>
+                     <div class="axle estepe">
+                         <div class="tire-position" data-position="ESTEPE">ESTEPE<input type="number" name="pneu_ESTEPE_f" placeholder="F" required><input type="number" name="pneu_ESTEPE_m" placeholder="M" required><input type="number" name="pneu_ESTEPE_d" placeholder="D" required></div>
+                     </div>
+                 </div>
+                 <button type="button" class="prev-btn" data-target="3">Voltar (Tipo)</button>
+                 <button type="button" class="next-btn">Próximo</button>
+             </form>
+        </div>
+
+        <div id="step-4" class="step hidden">
+            <h2><span class="step-number">5/7:</span> Níveis</h2>
+            <form class="checklist-form">
+                <div class="item"> <label>Nível Óleo Motor:</label> <div class="options"> <label><input type="radio" name="nivel_oleo" value="OK" required> OK</label> <label><input type="radio" name="nivel_oleo" value="Baixo"> Baixo</label> </div> </div>
+                <div class="item"> <label>Nível Água Radiador:</label> <div class="options"> <label><input type="radio" name="nivel_agua" value="OK" required> OK</label> <label><input type="radio" name="nivel_agua" value="Baixo"> Baixo</label> </div> </div>
+                <div class="item"> <label>Nível Água Limpador:</label> <div class="options"> <label><input type="radio" name="nivel_limpador" value="OK" required> OK</label> <label><input type="radio" name="nivel_limpador" value="Baixo"> Baixo</label> </div> </div>
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" class="next-btn">Próximo</button>
+            </form>
+        </div>
+        
+        <div id="step-5" class="step hidden">
+            <h2><span class="step-number">6/7:</span> Cabine e Freios</h2>
+            <form class="checklist-form">
+                <div class="item"> <label>Freio de Serviço (Pedal):</label> <div class="options"> <label><input type="radio" name="freio_servico" value="OK" required> OK</label> <label><input type="radio" name="freio_servico" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Freio de Estacionamento:</label> <div class="options"> <label><input type="radio" name="freio_estacionamento" value="OK" required> OK</label> <label><input type="radio" name="freio_estacionamento" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Buzina:</label> <div class="options"> <label><input type="radio" name="buzina" value="OK" required> OK</label> <label><input type="radio" name="buzina" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Limpadores de Para-brisa:</label> <div class="options"> <label><input type="radio" name="limpadores" value="OK" required> OK</label> <label><input type="radio" name="limpadores" value="Defeito"> Defeito</label> </div> </div>
+                <div class="item"> <label>Espelhos / Vidros:</label> <div class="options"> <label><input type="radio" name="espelhos_vidros" value="OK" required> OK</label> <label><input type="radio" name="espelhos_vidros" value="Defeito"> Danificado</label> </div> </div>
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" class="next-btn">Próximo</button>
+            </form>
+        </div>
+
+        <div id="step-6" class="step hidden">
+             <h2><span class="step-number">7/7:</span> Itens de Segurança e Documentos</h2>
+             <form class="checklist-form">
+                <div class="item"> <label>Triângulo:</label> <div class="options"> <label><input type="radio" name="triangulo" value="OK" required> OK</label> <label><input type="radio" name="triangulo" value="Faltando"> Faltando</label> </div> </div>
+                <div class="item"> <label>Chave de Rodas:</label> <div class="options"> <label><input type="radio" name="chave_rodas" value="OK" required> OK</label> <label><input type="radio" name="chave_rodas" value="Faltando"> Faltando</label> </div> </div>
+                <div class="item"> <label>Macaco:</label> <div class="options"> <label><input type="radio" name="macaco" value="OK" required> OK</label> <label><input type="radio" name="macaco" value="Faltando"> Faltando</label> </div> </div>
+                <div class="item"> <label>Extintor (Validade/Carga):</label> <div class="options"> <label><input type="radio" name="extintor" value="OK" required> OK</label> <label><input type="radio" name="extintor" value="Defeito"> Irregular</label> </div> </div>
+                <div class="item"> <label>Licenciamento (CRLV):</label> <div class="options"> <label><input type="radio" name="licenciamento" value="OK" required> OK</label> <label><input type="radio" name="licenciamento" value="Faltando/Vencido"> Faltando/Vencido</label> </div> </div>
+                <div class="item"> <label>AET (se aplicável):</label> <div class="options"> <label><input type="radio" name="aet" value="OK" required> OK</label> <label><input type="radio" name="aet" value="N/A ou Irregular"> N/A ou Irregular</label> </div> </div>
+                <div class="item"> <label>Aferição Tacógrafo:</label> <div class="options"> <label><input type="radio" name="tacografo" value="OK" required> OK</label> <label><input type="radio" name="tacografo" value="Faltando/Vencido"> Faltando/Vencido</label> </div> </div>
+                 <button type="button" class="prev-btn">Anterior</button>
+                 <button type="button" class="next-btn">Ir para Observações</button>
+             </form>
+        </div>
+
+        <div id="step-7" class="step hidden">
+            <h2><span class="step-number">Resumo:</span> Observações Finais</h2>
+            <form id="obs-form" class="checklist-form">
+                <label for="observacoes_manuais">Observações Adicionais (opcional):</label>
+                <textarea id="observacoes_manuais" rows="4" placeholder="Descreva qualquer outro problema encontrado..."></textarea>
+                
+                <div id="auto-defects-summary">
+                    <label>Defeitos já registrados:</label>
+                    <p id="auto-defects-list">Nenhum defeito encontrado.</p>
+                </div>
+                <div id="tire-analysis-summary">
+                    <label>Análise de Pneus:</label>
+                    <p id="tire-analysis-list">Nenhuma observação.</p>
+                </div>
+
+                <button type="button" class="prev-btn">Anterior</button>
+                <button type="button" class="next-btn">Ver Resumo Final</button>
+            </form>
+        </div>
+
+        <div id="step-8" class="step hidden">
+            <h2>Checklist Concluído</h2>
+            <p>Placa: <strong id="summary-plate"></strong></p>
+            <p>Tipo: <strong id="summary-truck-type"></strong></p>
+            <p>Data/Hora: <strong id="summary-datetime"></strong></p>
+            <div id="summary-items"></div>
+            <div id="summary-tires"></div>
+            <div id="summary-obs"></div>
+            <div class="action-buttons">
+                <button type="button" id="pdf-btn">Gerar PDF</button>
+                <button type="button" id="whatsapp-btn">Enviar Resumo (WhatsApp)</button>
+            </div>
+             <button type="button" id="restart-btn">Novo Checklist</button>
+        </div>
+    </div>
+    
+    <script src="logo.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

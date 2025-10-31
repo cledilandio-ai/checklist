@@ -1,0 +1,72 @@
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 15px; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 700px; margin: 20px auto; background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+h1, h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-bottom: 20px; }
+h1 { font-size: 1.8em; text-align: center; }
+h2 { font-size: 1.4em; }
+.step-number { font-weight: normal; color: #7f8c8d; margin-right: 5px; }
+.step { padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 20px; background-color: #fff; }
+.hidden { display: none; }
+.active { display: block; }
+form { display: flex; flex-direction: column; gap: 15px; }
+label { font-weight: 600; color: #555; }
+input[type="text"], input[type="number"], textarea { padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; font-family: inherit; width: 100%; }
+input[type="number"] { width: 55px; text-align: center; }
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus { outline: 2px solid #3498db; }
+input::placeholder { font-size: 0.8em; color: #aaa; }
+textarea { resize: vertical; }
+.item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dotted #eee; flex-wrap: wrap; gap: 10px; }
+.item label { flex-grow: 1; min-width: 150px; }
+.options { display: flex; gap: 15px; flex-wrap: wrap; }
+.options label { font-weight: normal; cursor: pointer; white-space: nowrap; }
+.options input[type="radio"] { margin-right: 5px; }
+
+/* --- Esquema de Pneus --- */
+.instruction { font-style: italic; color: #555; margin-bottom: 15px; }
+.tire-schematic { margin: 20px auto; padding: 10px; border: 1px solid #ccc; border-radius: 5px; display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 450px; background-color: #f9f9f9; }
+.axle { display: flex; justify-content: space-between; width: 100%; gap: 10px; border-bottom: 1px dashed #ccc; padding-bottom: 10px; }
+.axle:last-child { border-bottom: none; padding-bottom: 0; }
+.tire-position { display: flex; flex-direction: column; align-items: center; background-color: #e0e0e0; padding: 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; gap: 5px; text-align: center; }
+.tire-position input { margin-top: 3px; }
+.dual { margin-left: -5px; margin-right: -5px; }
+.inner { background-color: #d0d0d0; }
+.axle.estepe { justify-content: center; }
+
+/* --- Botões --- */
+button { padding: 12px 20px; font-size: 1em; font-weight: bold; color: #fff; background-color: #3498db; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.2s; margin-top: 10px; }
+button:hover { background-color: #2980b9; }
+.prev-btn { background-color: #95a5a6; }
+.prev-btn:hover { background-color: #7f8c8d; }
+#restart-btn { background-color: #e74c3c; margin-top: 20px; }
+#restart-btn:hover { background-color: #c0392b; }
+.checklist-form button { margin-right: 10px; }
+.checklist-form button:last-child { margin-right: 0; }
+
+/* --- Seção de Resumo --- */
+#summary-plate, #summary-truck-type, #summary-datetime { color: #2c3e50; }
+#summary-items .item, .tire-summary-item { border-bottom: none; padding: 5px 0; display: flex; justify-content: space-between; }
+#summary-items .status-ok { color: #27ae60; font-weight: bold; }
+#summary-items .status-defeito { color: #e74c3c; font-weight: bold; }
+#summary-tires h4, #summary-obs h4 { margin: 15px 0 5px 0; color: #555; }
+#summary-obs p { white-space: pre-wrap; font-style: italic; background: #f9f9f9; padding: 10px; border-radius: 5px; border: 1px solid #eee; }
+#auto-defects-summary { margin-top: 15px; }
+#auto-defects-summary p, #tire-analysis-summary p { font-style: italic; color: #e74c3c; line-height: 1.4; }
+.action-buttons { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+.action-buttons button { flex: 1; min-width: 150px; }
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    .container { padding: 15px; }
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.2em; }
+    .item { flex-direction: column; align-items: flex-start; }
+    .item label { margin-bottom: 5px; }
+    .options { width: 100%; justify-content: flex-start; }
+    button { width: 100%; margin-bottom: 10px; }
+    .checklist-form button.prev-btn { margin-bottom: 0; }
+    .action-buttons { flex-direction: column; }
+    .tire-schematic { padding: 10px; gap: 15px; }
+    .axle { flex-wrap: wrap; justify-content: center; }
+    .tire-position { min-width: 130px; }
+    input[type="number"] { width: 45px; }
+}
